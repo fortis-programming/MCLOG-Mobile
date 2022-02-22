@@ -45,7 +45,6 @@ public class RegisterInformationActivity extends AppCompatActivity {
     private EditText firstNameEt, lastNameEt, middleNameEt, birthdateEt;
     private DatePickerDialog.OnDateSetListener setListener;
     private Button proceedBtn;
-    private String MobileNumber;
 
 
     @Override
@@ -95,8 +94,12 @@ public class RegisterInformationActivity extends AppCompatActivity {
         Spinner citySpinner = findViewById(R.id.city);
         Spinner barangaySpinner = findViewById(R.id.barangay);
 
+        /*
+            LAGYAN NG INPUT YUNG:
+            *PHONENUMBER
+            *PASSWORD
+        */
         JSONObject userObject = new JSONObject();
-
         try {
             userObject.put("firstName", firstNameEt.getText().toString());
             userObject.put("lastName", lastNameEt.getText().toString());
@@ -113,7 +116,8 @@ public class RegisterInformationActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String API_URL = "https://mclogapi20220219222916.azurewebsites.net/api/Users";
+
+        String API_URL = "https://mclogapi20220219222916.azurewebsites.net/api/Users"; // CHANGE THIS WITH YOUR OWN DEPLOYMENT URL
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.POST,
@@ -123,6 +127,12 @@ public class RegisterInformationActivity extends AppCompatActivity {
                 error -> Log.e("Rest Response", error.toString())
         );
         requestQueue.add(jsonObjectRequest);
+
+        /*
+            WILL REDIRECT TO LOGIN ACTIVITY ONCE COMPLETED
+            # YOU CAN SET TOAST TO TELL THE ABOUT THE STATUS
+        */
+
         Intent intent = new Intent(RegisterInformationActivity.this, MainActivity.class);
         startActivity(intent);
     }

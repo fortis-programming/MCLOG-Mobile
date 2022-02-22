@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ContactTracingApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/mclcolor</item>
+        <item name="colorPrimaryVariant">@color/mclcolor</item>
+        <item name="colorOnPrimary">@color/lighgray</item>
+        <item name="colorPrimaryDark">@color/lighgray</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/lighgray</item>
+        <item name="colorSecondaryVariant">@color/mclcolor</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/mclcolor</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="Theme.ContactTracingApplication.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ContactTracingApplication.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.ContactTracingApplication.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
+</resources>

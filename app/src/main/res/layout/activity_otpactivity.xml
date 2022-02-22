@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".OTPActivity">
+
+    <TextView
+        android:id="@+id/linearOTP"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="One-Time Password " />
+    <TextView
+        android:id="@+id/linearSentence"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearOTP"
+        android:text="You will receive a One-Time Password (OTP) on your registered mobile number."
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingBottom="30dp"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/linearPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_below="@id/linearSentence">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/edDigit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="-"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/edDigit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="-"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1" />
+
+            <EditText
+                android:id="@+id/edDigit3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="-"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1" />
+
+            <EditText
+                android:id="@+id/edDigit4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="-"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1" />
+
+            <EditText
+                android:id="@+id/edDigit5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="-"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1" />
+
+            <EditText
+                android:id="@+id/edDigit6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="-"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:text="Proceed"
+            app:backgroundTint="@color/mclcolor">
+
+        </Button>
+    </LinearLayout>
+
+
+</RelativeLayout>
+

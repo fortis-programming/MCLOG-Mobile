@@ -3,7 +3,9 @@ package com.example.contacttracingapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
     private EditText etPassword, etUsername;
     private TextView txtRegister;
+    SharedPreferences storedData;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.mobileNumber);
         etPassword = findViewById(R.id.editTextTextPassword);
         txtRegister = findViewById(R.id.txtRegisterHere);
+
+        storedData = getSharedPreferences("storedData", Context.MODE_PRIVATE);
 
         txtRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +103,15 @@ public class MainActivity extends AppCompatActivity {
             return;
         } else {
             Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
-            intent.putExtra("userId", message);
+            // ===================================================================
+            /*
+                SAVE DATA WHICH ALLOWS ACTIVITIES TO ACCESS AND REUSE VALUES
+            */
+            SharedPreferences.Editor editor = storedData.edit();
+            editor.putString("userId", message);
+            editor.commit();
+            // ===================================================================
+
             startActivity(intent);
         }
     }

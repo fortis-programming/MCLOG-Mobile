@@ -2,7 +2,9 @@ package com.example.contacttracingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -39,7 +41,9 @@ public class MainMenuActivity extends AppCompatActivity {
         qrCodeView = findViewById(R.id.qrCodeView);
         userCompleteName = findViewById(R.id.UserCompleteName);
 
-        String UserId = getIntent().getStringExtra("userId");
+        SharedPreferences storedData = getApplicationContext().getSharedPreferences("storedData", Context.MODE_PRIVATE);
+        String UserId = storedData.getString("userId", ""); // RETRIEVE VALUES FROM SHAREDPREFERENCES
+
         GenerateQRCode(UserId);
         GetUsersName(UserId);
     }
@@ -54,7 +58,6 @@ public class MainMenuActivity extends AppCompatActivity {
         int width = point.x;
         int height = point.y;
 
-        // generating dimension from width and height.
         int dimen = width < height ? width : height;
         dimen = dimen * 3 / 4;
 
@@ -67,6 +70,7 @@ public class MainMenuActivity extends AppCompatActivity {
         }
     }
 
+    /* RETRIEVE USER'S NAME */
     private void GetUsersName(String id) {
         String API_URL = "https://mclogapi20220219222916.azurewebsites.net/api/Users/" + id;
 
